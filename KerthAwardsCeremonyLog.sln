@@ -5,9 +5,36 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Console", "src\Discord\Console\Console.csproj", "{A7B3AD36-FAF5-45ED-A910-7C1067759A35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogProcessor", "src\Discord\LogProcessor\LogProcessor.csproj", "{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogProcessor.Tests", "src\Discord\LogProcessor.Tests\LogProcessor.Tests.csproj", "{8596737A-AC17-4E47-97A9-717FE9F48E85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discord", "Discord", "{483B9E8A-5DBE-4C57-AFD2-01A14866E98F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7B3AD36-FAF5-45ED-A910-7C1067759A35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7B3AD36-FAF5-45ED-A910-7C1067759A35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7B3AD36-FAF5-45ED-A910-7C1067759A35}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7B3AD36-FAF5-45ED-A910-7C1067759A35}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8596737A-AC17-4E47-97A9-717FE9F48E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8596737A-AC17-4E47-97A9-717FE9F48E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8596737A-AC17-4E47-97A9-717FE9F48E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8596737A-AC17-4E47-97A9-717FE9F48E85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7B3AD36-FAF5-45ED-A910-7C1067759A35} = {483B9E8A-5DBE-4C57-AFD2-01A14866E98F}
+		{2ADF2437-52F5-4CA5-A6AC-261DFB21E9B1} = {483B9E8A-5DBE-4C57-AFD2-01A14866E98F}
+		{8596737A-AC17-4E47-97A9-717FE9F48E85} = {483B9E8A-5DBE-4C57-AFD2-01A14866E98F}
 	EndGlobalSection
 EndGlobal
