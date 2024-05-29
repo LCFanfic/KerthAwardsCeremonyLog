@@ -1,0 +1,75 @@
+{
+  "guild": {
+    "id": "908556304568684575",
+    "name": "loisclark",
+    "iconUrl": "https://cdn.discordapp.com/icons/908556304568684575/bbabf282b52562f4b48dfbdd21ecc0b2.png?size=512"
+  },
+  "channel": {
+    "id": "1231349228228313179",
+    "type": "GuildTextChat",
+    "categoryId": "998817449929613322",
+    "category": "Archived Channels",
+    "name": "kerth-ceremony",
+    "topic": "Welcome to the 2024 Kerths! Check the pinned messages for the link to the stage."
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "exportedAt": "2024-05-01T14:40:30.4099744+00:00",
+  "messages": [
+    {
+      "id": "1231642363881848933",
+      "type": "Default",
+      "timestamp": "2024-04-21T16:27:02.358+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": true,
+      "content": "*creates the stage*",
+      "author": {
+        "id": "000000000000000001",
+        "name": "usera",
+        "discriminator": "0000",
+        "nickname": "UserA",
+        "color": null,
+        "isBot": false,
+        "roles": [],
+        "avatarUrl": "https://cdn.discordapp.com/avatars/000000000000000001/70d39427343d606b75c3bef73e912542.png?size=512"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": []
+    },
+    {
+      "id": "1231642870650241084",
+      "type": "ChannelPinnedMessage",
+      "timestamp": "2024-04-21T16:29:03.181+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "Pinned a message.",
+      "author": {
+        "id": "000000000000000002",
+        "name": "userb",
+        "discriminator": "0000",
+        "nickname": "UserB",
+        "color": null,
+        "isBot": false,
+        "roles": [],
+        "avatarUrl": "https://cdn.discordapp.com/avatars/000000000000000002/70d39427343d606b75c3bef73e912542.png?size=512"
+      },
+      "attachments": [],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "1231642363881848933",
+        "channelId": "1231349228228313179",
+        "guildId": null
+      }
+    }
+  ]
+}

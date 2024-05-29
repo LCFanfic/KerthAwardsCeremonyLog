@@ -27,4 +27,9 @@
     <ProjectReference Include="..\LogProcessor\LogProcessor.csproj"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="TestData\*.json" />
+    <EmbeddedResource Include="TestData\*.json" />
+  </ItemGroup>
+
 </Project>

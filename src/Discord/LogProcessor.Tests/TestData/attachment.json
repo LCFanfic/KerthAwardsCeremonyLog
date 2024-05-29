@@ -1,0 +1,58 @@
+{
+  "guild": {
+    "id": "908556304568684575",
+    "name": "loisclark",
+    "iconUrl": "https://cdn.discordapp.com/icons/908556304568684575/bbabf282b52562f4b48dfbdd21ecc0b2.png?size=512"
+  },
+  "channel": {
+    "id": "1231642363881848933",
+    "type": "GuildPublicThread",
+    "categoryId": "1231349228228313179",
+    "category": "kerth-ceremony",
+    "name": "**The Stage**",
+    "topic": null
+  },
+  "dateRange": {
+    "after": null,
+    "before": null
+  },
+  "exportedAt": "2024-05-01T14:41:13.0420979+00:00",
+  "messages": [
+    {
+      "id": "1231642651300724817",
+      "type": "21",
+      "timestamp": "2024-04-21T16:28:10.884+00:00",
+      "timestampEdited": null,
+      "callEndedTimestamp": null,
+      "isPinned": false,
+      "content": "",
+      "author": {
+        "id": "000000000000000001",
+        "name": "usera",
+        "discriminator": "0000",
+        "nickname": "UserA",
+        "color": null,
+        "isBot": false,
+        "roles": [],
+        "avatarUrl": "https://cdn.discordapp.com/avatars/000000000000000001/70d39427343d606b75c3bef73e912542.png?size=512"
+      },
+      "attachments": [
+        {
+          "id": "1231690721665486939",
+          "url": "https://cdn.discordapp.com/attachments/1231642363881848933/1231690721665486939/image.png?ex=6633431f&is=6631f19f&hm=1e266c2616b50c606084aa0fba79ee6bc35144647891b74ba512ddfc865bb66e&",
+          "fileName": "image.png",
+          "fileSizeBytes": 71365
+        }
+      ],
+      "embeds": [],
+      "stickers": [],
+      "reactions": [],
+      "mentions": [],
+      "reference": {
+        "messageId": "1231642363881848933",
+        "channelId": "1231349228228313179",
+        "guildId": "908556304568684575"
+      }
+    }
+  ]
+}
