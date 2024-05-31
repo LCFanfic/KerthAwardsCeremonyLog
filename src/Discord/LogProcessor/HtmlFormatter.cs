@@ -161,6 +161,15 @@ public class HtmlFormatter
       output.WriteRaw(html);
     }
 
+    foreach (var attachment in message.Attachments)
+    {
+      output.WriteStartElement("img");
+      output.WriteAttributeString("src", attachment.OriginalString);
+      output.WriteAttributeString("alt", "");
+      output.WriteAttributeString("style", "max-width: 20em;");
+      output.WriteEndElement(); // img
+    }
+
     foreach (var reaction in message.Reactions)
     {
       output.WriteStartElement("span");
