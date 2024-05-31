@@ -153,6 +153,7 @@ public class HtmlFormatter
 
   private static void FormatContent (XmlWriter output, ChatMessage message)
   {
+    output.WriteStartElement("div");
     var isFirstLine = true;
     foreach (var line in message.Content.Split(new[] { '\n' }))
     {
@@ -165,6 +166,28 @@ public class HtmlFormatter
 
       output.WriteValue(line.Replace("/", "/" + s_zeroWidthWhiteSpace));
       isFirstLine = false;
+    }
+    output.WriteEndElement(); // div
+    foreach (var reaction in message.Reactions)
+    {
+      output.WriteStartElement("span");
+
+      output.WriteAttributeString("title", string.Join('\n', reaction.UserNames));
+      output.WriteStartElement("img");
+      output.WriteAttributeString("src", reaction.Emoji.OriginalString);
+      output.WriteAttributeString("alt", reaction.AlternateText.Replace('_', ' '));
+      output.WriteAttributeString("style", "width: 1.2em; height: 1.2em");
+      output.WriteEndElement(); // img
+
+      if (reaction.UserNames.Length > 1)
+      {
+        output.WriteValue(s_nonBreakingWhiteSpace.ToString());
+        output.WriteValue("\u00d7" + reaction.UserNames.Length.ToString());
+      }
+
+      output.WriteEndElement(); // span
+
+      output.WriteValue(" " + s_nonBreakingWhiteSpace + s_nonBreakingWhiteSpace + " ");
     }
   }
 }
