@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: COPYRIGHT Lois & Clark Fanfiction Tooling
 
 using System.Xml;
+using Markdig;
 
 namespace LCFanfic.KerthAwardsCeremonyLog.Discord.LogProcessor;
 
@@ -9,6 +10,7 @@ public class HtmlFormatter
 {
   private static readonly char s_nonBreakingWhiteSpace = '\u00A0';
   private static readonly char s_zeroWidthWhiteSpace = '\u200B';
+  private MarkdownPipeline _pipeline = new MarkdownPipelineBuilder().UseEmphasisExtras().Build();
 
   public void FormatMessages (XmlWriter output, IEnumerable<StageMessageWithChat> messages)
   {
@@ -97,7 +99,7 @@ public class HtmlFormatter
   }
 
 
-  private static void RenderStageMessage (XmlWriter output, ChatMessage stage, int rowSpan)
+  private void RenderStageMessage (XmlWriter output, ChatMessage stage, int rowSpan)
   {
     output.WriteStartElement("td");
     if (rowSpan > 1)
@@ -119,7 +121,7 @@ public class HtmlFormatter
   }
 
 
-  private static void RenderEmptyChatMessage (XmlWriter output)
+  private void RenderEmptyChatMessage (XmlWriter output)
   {
     output.WriteStartElement("td");
     output.WriteValue("");
@@ -135,7 +137,7 @@ public class HtmlFormatter
   }
 
 
-  private static void RenderChatMessage (XmlWriter output, ChatMessage chat)
+  private void RenderChatMessage (XmlWriter output, ChatMessage chat)
   {
     output.WriteStartElement("td");
     output.WriteValue(chat.Timestamp.ToString("HH:mm:ss"));
@@ -151,23 +153,14 @@ public class HtmlFormatter
   }
 
 
-  private static void FormatContent (XmlWriter output, ChatMessage message)
+  private void FormatContent (XmlWriter output, ChatMessage message)
   {
-    output.WriteStartElement("div");
-    var isFirstLine = true;
     foreach (var line in message.Content.Split(new[] { '\n' }))
     {
-      if (!isFirstLine)
-      {
-        output.WriteStartElement("br");
-        output.WriteEndElement();
-        output.WriteValue("\n");
-      }
-
-      output.WriteValue(line.Replace("/", "/" + s_zeroWidthWhiteSpace));
-      isFirstLine = false;
+      var html = Markdown.ToHtml(line.Replace("/", "/" + s_zeroWidthWhiteSpace), _pipeline);
+      output.WriteRaw(html);
     }
-    output.WriteEndElement(); // div
+
     foreach (var reaction in message.Reactions)
     {
       output.WriteStartElement("span");
